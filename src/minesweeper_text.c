@@ -75,7 +75,7 @@ int main()
         char sweep_or_flag;
         display_game(_game);
         printf("Sweep or Flag ? (s or f) ");
-        scanf("%c", &sweep_or_flag);
+        scanf(" %c", &sweep_or_flag);
         printf("Where ? ");
         scanf("%d %d", &x, &y);
 
