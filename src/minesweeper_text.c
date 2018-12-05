@@ -10,9 +10,15 @@
 
 void display_game(game g)
 {
-
+    printf("   ");
+    for(uint y = 0; y < game_width(g); y++){
+        
+        printf("%u ", y);
+    }
+    printf("\n\n");
     for (uint y = 0; y < game_height(g); y++)
-    {
+    {   
+        printf("%u  ", y);
         for (uint x = 0; x < game_width(g); x++)
         {
 
