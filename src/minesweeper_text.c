@@ -28,7 +28,7 @@ void display_game(game g)
             {
                 if (is_flag(cur_cell))
                 {
-                    printf("< ");
+                    printf("> ");
                 }
                 else if (is_mine(cur_cell))
                 {
