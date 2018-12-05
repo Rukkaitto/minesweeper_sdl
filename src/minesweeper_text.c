@@ -4,9 +4,9 @@
 #include <time.h>
 #include "game.h"
 
-#define WIDTH 5
-#define HEIGHT 5
-#define MINE_COUNT 1
+#define WIDTH 10
+#define HEIGHT 10
+#define MINE_COUNT 5
 
 void display_game(game g)
 {

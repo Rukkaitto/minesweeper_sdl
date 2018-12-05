@@ -34,7 +34,7 @@ Cell new_cell(uint x, uint y)
     c->neighbor_count = 0;
     c->mine = false;
     c->flag = false;
-    c->revealed = true;
+    c->revealed = false;
     return c;
 }
 
