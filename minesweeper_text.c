@@ -6,7 +6,7 @@
 
 #define WIDTH 10
 #define HEIGHT 10
-#define MINE_COUNT 5
+#define MINE_COUNT 10
 
 void display_game(game g)
 {
