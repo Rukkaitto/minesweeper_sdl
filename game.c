@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "game.h"
+#include <time.h>
 
 game new_game(uint width, uint height)
 {
@@ -190,10 +191,9 @@ bool is_flag(Cell c)
     return c->flag;
 }
 
-void set_flag(Cell c)
+void set_flag(Cell c, bool flag)
 {
-    c->flag = true;
-    c->revealed = true;
+    c->flag = flag;
 }
 
 bool is_won(game g)
@@ -212,4 +212,25 @@ bool is_won(game g)
         return true;
     }
     return false;
+}
+
+void set_random_mines(game g, uint mine_count)
+{
+    srand(time(NULL));
+    for (uint i = 0; i < mine_count; i++)
+    {
+        Cell c = get_cell(g, rand() % game_width(g), rand() % game_height(g));
+        set_mine(c);
+    }
+}
+
+void count_mines(game g)
+{
+    for (uint y = 0; y < game_height(g); y++)
+    {
+        for (uint x = 0; x < game_width(g); x++)
+        {
+            count_neighbors(g, get_cell(g, x, y));
+        }
+    }
 }

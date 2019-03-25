@@ -63,6 +63,10 @@ void revealNeighbors(game g, Cell c);
 
 bool is_flag(Cell c);
 
-void set_flag(Cell c);
+void set_flag(Cell c, bool flag);
 
 bool is_won(game g);
+
+void set_random_mines(game g, uint mine_count);
+
+void count_mines(game g);

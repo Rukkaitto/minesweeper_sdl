@@ -48,26 +48,7 @@ void display_game(game g)
     }
 }
 
-void set_random_mines(game g, uint mine_count)
-{
-    srand(time(NULL));
-    for (uint i = 0; i < mine_count; i++)
-    {
-        Cell c = get_cell(g, rand() % game_width(g), rand() % game_height(g));
-        set_mine(c);
-    }
-}
 
-void count_mines(game g)
-{
-    for (uint y = 0; y < game_height(g); y++)
-    {
-        for (uint x = 0; x < game_width(g); x++)
-        {
-            count_neighbors(g, get_cell(g, x, y));
-        }
-    }
-}
 
 int main()
 {
@@ -98,7 +79,7 @@ int main()
             }
             else
             {
-                set_flag(get_cell(_game, x, y));
+                set_flag(get_cell(_game, x, y), true);
             }
         }
     }
